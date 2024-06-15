@@ -1,6 +1,6 @@
 Dataset from https://www.kaggle.com/datasets/wisnuanggara/daftar-harga-rumah?resource=download&select=HARGA+RUMAH+JAKSEL.xlsx
 
-Project Description for GitHub: House Price Prediction Using Linear Regression with Regularization
+House Price Prediction Using Linear Regression
 
 Overview
 
