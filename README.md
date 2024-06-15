@@ -1,54 +1,36 @@
-#Objective
+Dataset from https://www.kaggle.com/datasets/wisnuanggara/daftar-harga-rumah?resource=download&select=HARGA+RUMAH+JAKSEL.xlsx
 
-The objective of this project is to build a linear regression model to predict house prices based on various features such as building area (LB), land area (LT), number of bedrooms (KT), number of bathrooms (KM), and number of garages (GRS). This project involves implementing all components of the model, including data normalization, cost function, and gradient descent algorithm, from scratch without using pre-existing machine learning libraries.
+Project Description for GitHub: House Price Prediction Using Linear Regression with Regularization
 
-Dataset
-The dataset used in this project contains information about houses, including the following features:
+Overview
 
-LB (Building Area): Building area in square meters.
-LT (Land Area): Land area in square meters.
-KT (Number of Bedrooms): Number of bedrooms.
-KM (Number of Bathrooms): Number of bathrooms.
-GRS (Number of Garages): Number of garages.
-Price: House price in Indonesian Rupiah.
-The dataset is loaded from an Excel file named DATA RUMAH.xlsx.
+This project aims to build a linear regression model that can predict house prices based on several features such as 
+
+building area (LB), 
+land area (LT), 
+number of bedrooms (KT), 
+number of bathrooms (KM), 
+and number of garages (GRS). 
+
+To improve the model's performance and prevent overfitting, regularization techniques are employed.
 
 Project Steps
-Import Necessary Libraries
+1. Data Loading:
+Load the house data from an Excel file named DATA RUMAH.xlsx.
+Feature Normalization:
 
-Importing libraries such as numpy for numerical operations, pandas for data manipulation, and matplotlib for visualization.
-Load Data from Excel File
+2. Normalize the features to ensure they are on the same scale. This is achieved by calculating the mean and standard deviation of each feature and then transforming the features accordingly.
 
-Reading the dataset from the Excel file using pandas.
-Normalize Features
+3. Add Bias Term: Add a bias column (with value 1) to the normalized features to allow the model to learn the intercept of the linear regression.
 
-Normalizing the features to ensure they are on the same scale. This is done by subtracting the mean and dividing by the standard deviation of each feature.
-Add Bias Column
+4. Cost Function with Regularization:The cost function computes the error (difference between predictions and actual values) and adds a regularization penalty to reduce model complexity and prevent overfitting.
 
-Adding a column of ones at the beginning of the feature matrix to account for the bias term in the linear regression model.
-Create Cost Function with Regularization
+5. Gradient Descent with Regularization: Use gradient descent to update the model weights. Regularization is added in the weight update process except for the bias term.
 
-Implementing a cost function that calculates the Mean Squared Error (MSE) and adds a regularization term to reduce overfitting.
-Gradient Descent with Regularization
+6. Data Preparation: Split the data into training and testing sets with an 80:20 ratio.
 
-Implementing the gradient descent algorithm to minimize the cost function. A regularization term is added to penalize large feature weights and reduce overfitting.
-Prepare Data
+7. Hyperparameter Experimentation: Try various combinations of learning rates (0.001, 0.01, 0.1) and regularization strengths (0, 0.01, 0.1) to find the best combination that gives the lowest cost on the training set.
 
-Splitting the dataset into features (X) and target (y).
-Normalizing the features and adding a bias column.
-Splitting the data into training and testing sets.
-Experiment with Different Learning Rates and Regularization Values
+8. Prediction and Evaluation:Use the best model to predict house prices on the test set. Evaluate the predictions using metrics such as Mean Absolute Error (MAE), Mean Squared Error (MSE), and R-squared (R2).Visualize the results to compare actual and predicted prices, and to see the convergence of the cost function during gradient descent.
 
-Trying different combinations of learning rates and regularization values to find the best combination that results in the lowest cost.
-Make Predictions on Test Data
-
-Using the best model to predict house prices on the test data.
-Visualize Results
-
-Creating a plot to compare actual prices with predicted prices to evaluate the model's performance.
-Visualize Cost Function Convergence
-
-Creating a plot to show the convergence of the cost function during the training process to ensure the gradient descent algorithm is working correctly.
-Print Best Weights and Hyperparameters
-
-Displaying the best weights found, along with the learning rate and regularization value used.
+9. Final Results:Visualize a scatter plot showing the relationship between actual and predicted house prices. Plot the cost function convergence for the best model. Print the best weights, learning rate, and regularization strength found. Display the evaluation metrics: MAE, MSE, and R2.
