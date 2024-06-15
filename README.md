@@ -1,4 +1,5 @@
-Objective
+#Objective
+
 The objective of this project is to build a linear regression model to predict house prices based on various features such as building area (LB), land area (LT), number of bedrooms (KT), number of bathrooms (KM), and number of garages (GRS). This project involves implementing all components of the model, including data normalization, cost function, and gradient descent algorithm, from scratch without using pre-existing machine learning libraries.
 
 Dataset
